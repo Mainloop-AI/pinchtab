@@ -32,7 +32,7 @@ permissions:
 jobs:
   release:
     name: Release Binaries
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     permissions:
       contents: write
       packages: write
@@ -71,7 +71,7 @@ jobs:
 
   npm:
     name: Publish to npm
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     needs: release
     permissions:
       contents: read
@@ -119,7 +119,7 @@ jobs:
 
   docker:
     name: Docker Image
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     permissions:
       contents: read
       packages: read
