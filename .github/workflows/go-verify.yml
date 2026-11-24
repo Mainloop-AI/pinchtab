@@ -27,7 +27,7 @@ jobs:
   # Check which files changed to conditionally run jobs
   changes:
     name: Detect Changes
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     if: github.event.pull_request.draft == false
     outputs:
       go: ${{ steps.filter.outputs.go }}
@@ -47,7 +47,7 @@ jobs:
   build:
     name: Build & Vet
     needs: changes
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     steps:
       - name: Check for Go changes
         id: check
@@ -105,7 +105,7 @@ jobs:
   lint:
     name: Lint
     needs: changes
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     steps:
       - name: Check for Go changes
         id: check
@@ -148,7 +148,7 @@ jobs:
   security:
     name: Security Scan
     needs: changes
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     steps:
       - name: Check for Go changes
         id: check

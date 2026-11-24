@@ -18,7 +18,7 @@ permissions:
 jobs:
   docs-validate:
     name: Validate Documentation
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-2vcpu-ubuntu-2604
     if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v4
